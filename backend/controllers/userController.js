@@ -69,7 +69,7 @@ export const loginUser = async (req, res) =>{
         if(!isMatch) {
              return res.status(500).json({message: "Invalid email or password"})
         }
-        res.stauts(201).json({
+        res.status(201).json({
     _id: user.id,
     name: user.name,
     email: user.email,
