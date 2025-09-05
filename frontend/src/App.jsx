@@ -1,13 +1,19 @@
 
+import {  Route, Routes } from 'react-router-dom'
 import './App.css'
+import LandingPage from './pages/LandingPage'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
-    <>
-      <h1 className='bg-red-500'>hello world</h1>
-    </>
+    <div>
+      dfjfkgsf;kjglshffsjk;;
+ 
+      <Routes>
+        <Route path='/' element={<LandingPage/>} />
+      </Routes>
+  </div>
   )
 }
 
