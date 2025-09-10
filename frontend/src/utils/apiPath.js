@@ -6,7 +6,7 @@ export const API_PATHS = {
 
     REGISTER:   '/register' ,
     LOGIN: '/login',
-    GET_PROFILE : 'api/auth/profile' ,
+    GET_PROFILE : '/api/auth/profile' ,
     },
 
     RESUME: {
@@ -18,7 +18,9 @@ export const API_PATHS = {
        UPLOADE_IMAGES: (id) => `/api/resume/${id}/uploade-image`,
 
         
-    }
+    },
 
-    Image
+    Image: {
+        UPLOADE_IMAGES: 'api/auth/uploade-image',
+    }
 }

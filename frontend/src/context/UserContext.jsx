@@ -1,6 +1,9 @@
+import axios from "axios";
 import { Flag } from "lucide-react";
 import React, { Children, useEffect, useState } from "react";
 import { createContext } from "react";
+import axiosInstance from "../utils/axiosIntance";
+import { API_PATHS } from "../utils/apiPath";
 export const UserContext = createContext();
 
 
@@ -21,14 +24,43 @@ const UserProvider = ({Children}) => {
 const fetchUser = async () =>{
     try{
 
-const response = await
+const response = await axiosInstance.get(API_PATHS.AUTH.GET_PROFILE)
+setUser(response.data)
 
 
     } catch (error){
 
+console.error("User not authenticated", error)
+clearUser()
     }
+
+finally{
+    setLoading(false)
 }
 
-    })
+};
+fetchUser();
+
+    }, []);
+
+
+    const updateUser = (userData) => {
+setUser(userData)
+localStorage.setItem('token', userData.token)
+setLoading(false)
+    }
+
+
+    const clearUser  = () => {
+
+        setUser(null)
+        localStorage.removeItem('token')
+    }
+
+    return <UserContext.Provider value={(user, loading, updateUser, clearUser)}>
+        {Children}
+    </UserContext.Provider>
 
 }
+
+export default UserProvider;
