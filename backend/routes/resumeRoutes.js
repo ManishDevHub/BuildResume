@@ -11,7 +11,7 @@ resumeRouter.get('/',protect, getUserResume)
 resumeRouter.get('/',protect,getResumeById)
 
 resumeRouter.put('/:id', protect, updateResume)
-resumeRouter.put('/:id/uploade/-image', uploadResumeImages )
+resumeRouter.put('/:id/uploade-image', uploadResumeImages )
 
 resumeRouter.delete('/:id', protect,deleteResume)
 

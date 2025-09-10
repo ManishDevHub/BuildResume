@@ -1,6 +1,6 @@
 
-import {  Route, Routes } from 'react-router-dom'
-import './App.css'
+import {   Route, Routes } from 'react-router-dom'
+
 import LandingPage from './pages/LandingPage'
 
 function App() {
@@ -8,11 +8,15 @@ function App() {
 
   return (
     <div>
-      dfjfkgsf;kjglshffsjk;;
+      hello word
+      
+  
  
       <Routes>
         <Route path='/' element={<LandingPage/>} />
       </Routes>
+      
+      
   </div>
   )
 }
