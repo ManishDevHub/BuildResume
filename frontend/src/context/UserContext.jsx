@@ -8,9 +8,9 @@ export const UserContext = createContext();
 
 
 
-const UserProvider = ({Children}) => {
+const UserProvider = ({children}) => {
     const [user, setUser] = useState(null);
-    cnst [loading , setLoading] = useState(true);
+    const [loading , setLoading] = useState(true);
 
 
     useEffect(() => {
@@ -58,7 +58,7 @@ setLoading(false)
     }
 
     return <UserContext.Provider value={(user, loading, updateUser, clearUser)}>
-        {Children}
+        {children}
     </UserContext.Provider>
 
 }
